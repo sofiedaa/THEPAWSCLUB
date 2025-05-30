@@ -11,7 +11,7 @@ include 'koneksi.php';
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     body {
-      background-color: #f1f3f6;
+      background-color: rgb(220, 231, 255);
       font-family: 'Segoe UI', sans-serif;
       color: #2c3e50;
     }
@@ -54,7 +54,7 @@ include 'koneksi.php';
     }
     .icon-box {
       font-size: 2.2rem;
-      color: #0d6efd;
+      color:rgb(5, 30, 67);
     }
   </style>
 </head>
