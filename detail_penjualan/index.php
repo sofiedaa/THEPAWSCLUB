@@ -44,7 +44,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM detail_penjualan");
         <td><?= $i++ ?></td>
         <td><?= $row['ID_PRODUK'] ?></td>
         <td><?= $row['JUMLAH'] ?></td>
-        <td>Rp<?= number_format($row['SUBTOTAL'], 2, ',', '.') ?></td>
+        <td>Rp<?= number_format($row['SUB_TOTAL'], 2, ',', '.') ?></td>
         <td><?= $row['ID_PEMBAYARAN'] ?></td>
         <td>
           <div class="d-flex gap-2">

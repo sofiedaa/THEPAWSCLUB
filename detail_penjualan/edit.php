@@ -53,7 +53,7 @@ $row = mysqli_fetch_assoc($data);
 
     <div class="mb-3">
       <label class="form-label">Subtotal</label>
-      <input type="number" step="0.01" name="subtotal" class="form-control" value="<?= $row['SUBTOTAL'] ?>" required>
+      <input type="number" step="0.01" name="subtotal" class="form-control" value="<?= $row['SUB_TOTAL'] ?>" required>
     </div>
 
     <div class="mb-3">

@@ -1,7 +1,7 @@
 <?php include '../koneksi.php'; 
 
 function insertDetail($koneksi, $id_produk, $jumlah, $subtotal, $id_pembayaran) {
-  $query = "INSERT INTO detail_penjualan (ID_PRODUK, JUMLAH, SUBTOTAL, ID_PEMBAYARAN) 
+  $query = "INSERT INTO detail_penjualan (ID_PRODUK, JUMLAH, SUB_TOTAL, ID_PEMBAYARAN) 
             VALUES ('$id_produk', '$jumlah', '$subtotal', '$id_pembayaran')";
   return mysqli_query($koneksi, $query);
 }
