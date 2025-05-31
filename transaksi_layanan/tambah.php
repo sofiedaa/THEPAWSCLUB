@@ -1,7 +1,7 @@
 <?php include '../koneksi.php';
-function insertTransaksiLayanan($koneksi, $id_pelanggan, $id_layanan, $jumlah, $total_harga) {
-    $query = "INSERT INTO transaksi_layanan (ID_PELANGGAN, ID_LAYANAN, JUMLAH, TOTAL_HARGA)
-              VALUES ('$id_pelanggan', '$id_layanan', '$jumlah', '$total_harga')";
+function insertTransaksiLayanan($koneksi, $id_pembayaran, $id_layanan, $jumlah, $total_harga) {
+    $query = "INSERT INTO transaksi_layanan (ID_PEMBAYARAN, ID_LAYANAN, JUMLAH, TOTAL_HARGA)
+              VALUES ('$id_pembayaran', '$id_layanan', '$jumlah', '$total_harga')";
     return mysqli_query($koneksi, $query);
 }
 ?>
@@ -27,8 +27,8 @@ function insertTransaksiLayanan($koneksi, $id_pelanggan, $id_layanan, $jumlah, $
 
   <form method="POST" action="function.php">
     <div class="mb-3">
-      <label class="form-label">ID Pelanggan</label>
-      <input type="text" name="id_pelanggan" class="form-control" required>
+      <label class="form-label">ID Pembayaran</label>
+      <input type="text" name="id_pembayaran" class="form-control" required>
     </div>
     <div class="mb-3">
       <label class="form-label">ID Layanan</label>

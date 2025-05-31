@@ -29,7 +29,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM transaksi_layanan");
     <thead class="table-light">
       <tr>
         <th>#</th>
-        <th>ID Pelanggan</th>
+        <th>ID Pembayaran</th>
         <th>ID Layanan</th>
         <th>Jumlah</th>
         <th>Total Harga</th>
@@ -40,7 +40,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM transaksi_layanan");
       <?php $i = 1; while($row = mysqli_fetch_assoc($data)): ?>
       <tr>
         <td><?= $i++ ?></td>
-        <td><?= $row['ID_PELANGGAN'] ?></td>
+        <td><?= $row['ID_PEMBAYARAN'] ?></td>
         <td><?= $row['ID_LAYANAN'] ?></td>
         <td><?= $row['JUMLAH'] ?></td>
         <td>Rp <?= number_format($row['TOTAL_HARGA'], 0, ',', '.') ?></td>

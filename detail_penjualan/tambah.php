@@ -47,7 +47,7 @@ function insertDetail($koneksi, $id_produk, $jumlah, $subtotal, $id_pembayaran) 
 
     <div class="mb-3">
       <label class="form-label">Subtotal</label>
-      <input type="number" step="0.01" name="subtotal" class="form-control" required>
+      <input type="text" value="Akan dihitung otomatis" readonly>
     </div>
 
     <div class="mb-3">

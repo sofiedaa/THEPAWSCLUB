@@ -28,8 +28,8 @@ $row = mysqli_fetch_assoc($data);
     <input type="hidden" name="id" value="<?= $row['ID_TRANSAKSI'] ?>">
     
     <div class="mb-3">
-      <label class="form-label">ID Pelanggan</label>
-      <input type="text" name="id_pelanggan" class="form-control" value="<?= $row['ID_PELANGGAN'] ?>" required>
+      <label class="form-label">ID Pembayaran</label>
+      <input type="text" name="id_pembayaran" class="form-control" value="<?= $row['ID_PEMBAYARAN'] ?>" required>
     </div>
     <div class="mb-3">
       <label class="form-label">ID Layanan</label>
