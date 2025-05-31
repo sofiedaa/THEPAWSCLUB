@@ -1,9 +1,10 @@
-<?php include '../koneksi.php'; ?>
+<?php include '../koneksi.php';
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Tambah Produk</title>
+  <title>Tambah Pembayaran</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body { background-color: #f1f5f9; font-family: 'Segoe UI', sans-serif; }
@@ -19,11 +20,12 @@
     <a href="index.php" class="btn btn-secondary btn-sm">← Kembali</a>
   </div>
 
-  <form method="POST" action="function.php">
+  <form action="function.php" method="POST">
     <div class="mb-3">
       <label class="form-label">ID Pelanggan</label>
       <input type="text" name="id_pelanggan" class="form-control" required>
     </div>
+
     <div class="mb-3">
       <label class="form-label">Metode Pembayaran</label>
       <select name="metode" class="form-control" required>
@@ -32,14 +34,19 @@
         <option value="QRIS">QRIS</option>
       </select>
     </div>
+
     <div class="mb-3">
       <label class="form-label">Tanggal</label>
       <input type="date" name="tanggal" class="form-control" required>
     </div>
+
     <div class="mb-3">
-      <label class="form-label">Total Pembayaran</label>
-      <input type="number" name="total" class="form-control" required>
-    </div>
+  <label class="form-label">Total Pembayaran</label>
+  <input type="number" name="total_pembayaran" class="form-control" required>
+  <small class="text-muted">Masukin total pembayaran secara manual yaa.</small>
+</div>
+
+
     <button type="submit" name="tambah" class="btn btn-primary">Simpan</button>
   </form>
 </div>
