@@ -61,7 +61,7 @@ include 'koneksi.php';
 <body>
 
 <div class="dashboard-container">
-  <h3 class="mb-4 fw-bold text-center">Dashboard Admin Petshop 🐾</h3>
+<h3 class="mb-4 fw-bold text-center fs-1">Dashboard Admin Petshop 🐾</h3>
 
   <div class="row g-4">
 
@@ -96,6 +96,8 @@ include 'koneksi.php';
 
   </div>
 </div>
-
+<footer class="text-center">
+  <p>&copy; 2025 The Paws Club. Semua hak cipta dilindungi.</p>
+</footer>
 </body>
 </html>

@@ -49,8 +49,8 @@ $data = mysqli_query($koneksi, "SELECT * FROM hewan_peliharaan");
         <td><?= $row['BERAT'] ?> kg</td>
         <td><?= $row['ID_PELANGGAN'] ?></td>
         <td>
-  <a href="edit.php?id=<?php echo $row['Id_hewan']; ?>" class="btn btn-warning btn-sm">Edit</a>
-  <a href="function.php?Aksi=Hapus&id=<?php echo $row['Id_hewan']; ?>" 
+  <a href="edit.php?id=<?php echo $row['ID_HEWAN']; ?>" class="btn btn-warning btn-sm">Edit</a>
+  <a href="function.php?Aksi=Hapus&id=<?php echo $row['ID_HEWAN']; ?>" 
      class="btn btn-danger btn-sm" 
      onclick="return confirm('Yakin mau hapus data ini?')">Hapus</a>
 </td>

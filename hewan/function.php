@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 function updateHewan($koneksi, $id_hewan, $jenis, $usia, $berat, $id_pelanggan, $nama_hewan) {
     $query = "UPDATE hewan_peliharaan 
               SET JENIS = '$jenis', USIA = '$usia', BERAT = '$berat', ID_PELANGGAN = '$id_pelanggan', NAMA_HEWAN = '$nama_hewan' 
-              WHERE Id_hewan = '$id_hewan'";
+              WHERE ID_HEWAN = '$id_hewan'";
     return mysqli_query($koneksi, $query);
 }
 

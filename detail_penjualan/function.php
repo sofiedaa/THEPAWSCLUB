@@ -13,7 +13,7 @@ function insertDetail($koneksi, $id_produk, $jumlah, $subtotal, $id_pembayaran) 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['tambah'])) {
     $id_produk     = $_POST['ID_PRODUK'];
     $jumlah        = $_POST['JUMLAH'];
-    $subtotal      = $_POST['SUBT_OTAL'];
+    $subtotal      = $_POST['SUB_TOTAL'];
     $id_pembayaran = $_POST['ID_PEMBAYARAN'];
 
     if (insertDetail($koneksi, $id_produk, $jumlah, $subtotal, $id_pembayaran)) {

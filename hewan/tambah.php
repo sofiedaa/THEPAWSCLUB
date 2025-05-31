@@ -1,6 +1,6 @@
 <?php include '../koneksi.php'; 
 function insertHewan($koneksi, $id_hewan, $jenis, $usia, $berat, $id_pelanggan, $nama_hewan) {
-  $query = "INSERT INTO hewan_peliharaan (Id_hewan, JENIS, USIA, BERAT, ID_PELANGGAN, NAMA_HEWAN) 
+  $query = "INSERT INTO hewan_peliharaan (ID_HEWAN, JENIS, USIA, BERAT, ID_PELANGGAN, NAMA_HEWAN) 
             VALUES ('$id_hewan', '$jenis', '$usia', '$berat', '$id_pelanggan', '$nama_hewan')";
   return mysqli_query($koneksi, $query);
 }

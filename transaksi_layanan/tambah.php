@@ -1,4 +1,10 @@
-<?php include '../koneksi.php'; ?>
+<?php include '../koneksi.php';
+function insertTransaksiLayanan($koneksi, $id_pelanggan, $id_layanan, $jumlah, $total_harga) {
+    $query = "INSERT INTO transaksi_layanan (ID_PELANGGAN, ID_LAYANAN, JUMLAH, TOTAL_HARGA)
+              VALUES ('$id_pelanggan', '$id_layanan', '$jumlah', '$total_harga')";
+    return mysqli_query($koneksi, $query);
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -29,12 +35,12 @@
       <input type="text" name="id_layanan" class="form-control" required>
     </div>
     <div class="mb-3">
-      <label class="form-label">Tanggal</label>
-      <input type="date" name="tanggal" class="form-control" required>
+      <label class="form-label">Jumlah</label>
+      <input type="number" name="tanggal" class="form-control" required>
     </div>
     <div class="mb-3">
       <label class="form-label">Total Harga</label>
-      <input type="number" name="total" class="form-control" required>
+      <input type="text" value="Akan dihitung otomatis" readonly>
     </div>
     <button type="submit" name="tambah" class="btn btn-primary">Simpan</button>
   </form>

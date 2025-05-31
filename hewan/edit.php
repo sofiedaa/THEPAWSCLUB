@@ -1,7 +1,7 @@
 <?php
 include '../koneksi.php';
 $id = $_GET['id'];
-$data = mysqli_query($koneksi, "SELECT * FROM hewan_peliharaan WHERE Id_hewan = '$id'");
+$data = mysqli_query($koneksi, "SELECT * FROM hewan_peliharaan WHERE ID_HEWAN = '$id'");
 $row = mysqli_fetch_assoc($data);
 ?>
 
@@ -39,7 +39,7 @@ $row = mysqli_fetch_assoc($data);
   </div>
 
   <form method="POST" action="function.php">
-    <input type="hidden" name="id_hewan" value="<?= $row['Id_hewan'] ?>">
+    <input type="hidden" name="id_hewan" value="<?= $row['ID_HEWAN'] ?>">
 
     <div class="mb-3">
       <label class="form-label">Nama Hewan</label>

@@ -31,7 +31,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM transaksi_layanan");
         <th>#</th>
         <th>ID Pelanggan</th>
         <th>ID Layanan</th>
-        <th>Tanggal</th>
+        <th>Jumlah</th>
         <th>Total Harga</th>
         <th>Aksi</th>
       </tr>
@@ -42,7 +42,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM transaksi_layanan");
         <td><?= $i++ ?></td>
         <td><?= $row['ID_PELANGGAN'] ?></td>
         <td><?= $row['ID_LAYANAN'] ?></td>
-        <td><?= $row['TANGGAL'] ?></td>
+        <td><?= $row['JUMLAH'] ?></td>
         <td>Rp <?= number_format($row['TOTAL_HARGA'], 0, ',', '.') ?></td>
         <td>
           <a href="edit.php?id=<?= $row['ID_TRANSAKSI'] ?>" class="btn btn-warning btn-sm">Edit</a>

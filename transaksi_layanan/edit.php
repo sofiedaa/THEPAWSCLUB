@@ -36,12 +36,12 @@ $row = mysqli_fetch_assoc($data);
       <input type="text" name="id_layanan" class="form-control" value="<?= $row['ID_LAYANAN'] ?>" required>
     </div>
     <div class="mb-3">
-      <label class="form-label">Tanggal</label>
-      <input type="date" name="tanggal" class="form-control" value="<?= $row['TANGGAL'] ?>" required>
+      <label class="form-label">Jumlah</label>
+      <input type="number" name="jumlah" class="form-control" value="<?= $row['JUMLAH'] ?>" required>
     </div>
     <div class="mb-3">
       <label class="form-label">Total Harga</label>
-      <input type="number" name="total" class="form-control" value="<?= $row['TOTAL_HARGA'] ?>" required>
+      <input type="text" value="Akan dihitung otomatis" readonly>
     </div>
 
     <button type="submit" name="edit" class="btn btn-primary">Update</button>

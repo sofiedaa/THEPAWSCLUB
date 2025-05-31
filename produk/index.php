@@ -9,7 +9,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM produk");
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body { background-color: #f1f5f9; font-family: 'Segoe UI', sans-serif; }
-    .container-box { max-width: 900px; margin: 50px auto; background: white; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); padding: 30px; }
+    .container-box { max-width: 1100px; margin: 50px auto; background: white; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); padding: 30px; }
     h4 { font-weight: bold; margin-bottom: 25px; }
     .btn-primary { border-radius: 6px; }
     .table th { font-weight: 600; }
@@ -30,11 +30,12 @@ $data = mysqli_query($koneksi, "SELECT * FROM produk");
     <thead class="table-light">
       <tr>
         <th>#</th>
-        <th>Kode Produk</th> <!-- kolom baru -->
+        <th>Kode Produk</th>
         <th>Nama Produk</th>
         <th>Harga</th>
         <th>Stock</th>
         <th>Status</th>
+        <th>Kategori</th>
         <th>Aksi</th>
       </tr>
     </thead>
@@ -42,7 +43,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM produk");
       <?php $i = 1; while($row = mysqli_fetch_assoc($data)): ?>
       <tr>
         <td><?= $i++ ?></td>
-        <td><?= $row['KODE_PRODUK'] ?></td> <!-- isi kode produk -->
+        <td><?= $row['KODE_PRODUK'] ?></td>
         <td><?= $row['NAMA_PRODUK'] ?></td>
         <td>Rp <?= number_format($row['HARGA'], 0, ',', '.') ?></td>
         <td><?= $row['STOCK'] ?></td>
@@ -51,11 +52,14 @@ $data = mysqli_query($koneksi, "SELECT * FROM produk");
             <?= ucfirst($row['STATUS']) ?>
           </span>
         </td>
+        <td><?= $row['KATEGORI'] ?></td>
         <td>
-          <a href="edit.php?id=<?= $row['ID_PRODUK'] ?>" class="btn btn-warning btn-sm">Edit</a>
-          <a href="toggle_status.php?id=<?= $row['ID_PRODUK'] ?>" class="btn btn-outline-primary btn-sm">
-            <?= $row['STATUS'] == 'aktif' ? 'Nonaktifkan' : 'Aktifkan' ?>
-          </a>
+          <div class="d-flex gap-2">
+            <a href="edit.php?id=<?= $row['ID_PRODUK'] ?>" class="btn btn-warning btn-sm">Edit</a>
+            <a href="toggle_status.php?id=<?= $row['ID_PRODUK'] ?>" class="btn btn-outline-primary btn-sm">
+              <?= $row['STATUS'] == 'aktif' ? 'Nonaktifkan' : 'Aktifkan' ?>
+            </a>
+          </div>
         </td>
       </tr>
       <?php endwhile; ?>
