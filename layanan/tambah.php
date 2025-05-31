@@ -26,9 +26,20 @@
     </div>
 
     <div class="mb-3">
-      <label class="form-label">ID Pegawai</label>
-      <input type="text" name="id_pegawai" class="form-control" required>
-    </div>
+  <label class="form-label">ID Pegawai</label>
+  <select name="id_pegawai" class="form-control" required>
+    <option value="">-- Pilih Pegawai --</option>
+    <?php 
+      include '../koneksi.php';
+      $pegawai = mysqli_query($koneksi, "SELECT ID_PEGAWAI, POSISI FROM pegawai");
+      while ($row = mysqli_fetch_assoc($pegawai)) {
+          echo "<option value='{$row['ID_PEGAWAI']}'>
+                {$row['ID_PEGAWAI']} - {$row['POSISI']}
+                </option>";
+      }
+    ?>
+  </select>
+</div>
 
     <div class="mb-3">
       <label class="form-label">Deskripsi</label>

@@ -37,7 +37,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM pembayaran"); ?>
     <tbody>
       <?php $i = 1; while($row = mysqli_fetch_assoc($data)): ?>
       <tr>
-        <td><?= $i++ ?></td>
+        <td><?= $row['ID_PEMBAYARAN'] ?></td>
         <td><?= $row['ID_PELANGGAN'] ?></td>
         <td><?= $row['METODE_PEMBAYARAN'] ?></td>
         <td><?= $row['TANGGAL'] ?></td>

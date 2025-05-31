@@ -42,8 +42,7 @@
 
     <div class="mb-3">
   <label class="form-label">Total Pembayaran</label>
-  <input type="number" name="total_pembayaran" class="form-control" required>
-  <small class="text-muted">Masukin total pembayaran secara manual yaa.</small>
+  <input type="text" value="Akan dihitung otomatis" readonly>
 </div>
 
 

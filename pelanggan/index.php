@@ -39,7 +39,7 @@
     <tbody>
       <?php $i = 1; while($row = mysqli_fetch_assoc($data)): ?>
       <tr>
-        <td><?= $i++ ?></td>
+        <td><?= $row['Id_Pelanggan'] ?></td>
         <td><?= $row['Nama'] ?></td>
         <td><?= $row['No_Telp'] ?></td>
         <td><?= $row['Alamat'] ?></td>

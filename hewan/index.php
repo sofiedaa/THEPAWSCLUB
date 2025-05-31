@@ -42,7 +42,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM hewan_peliharaan");
     <tbody>
       <?php $i = 1; while($row = mysqli_fetch_assoc($data)): ?>
       <tr>
-        <td><?= $i++ ?></td>
+        <td><?= $row['ID_HEWAN'] ?></td>
         <td><?= $row['NAMA_HEWAN'] ?></td>
         <td><?= $row['JENIS'] ?></td>
         <td><?= $row['USIA'] ?> th</td>

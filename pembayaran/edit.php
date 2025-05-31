@@ -46,12 +46,7 @@ $row = mysqli_fetch_assoc($data);
       <input type="date" name="tanggal" class="form-control" value="<?= $row['TANGGAL'] ?>" required>
     </div>
 
-    <div class="mb-3">
-  <label class="form-label">Total Pembayaran</label>
-  <input type="number" name="total_pembayaran" class="form-control" required>
-  <small class="text-muted">Masukin total pembayaran secara manual yaa.</small>
-</div>
-
+    
 
     <button type="submit" name="edit" class="btn btn-primary">Update</button>
   </form>

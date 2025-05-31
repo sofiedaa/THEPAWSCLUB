@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['tambah'])) {
         header("Location: index.php");
         exit;
     } else {
-        echo "Data detail penjualan gagal disimpan 😿<br>" . mysqli_error($koneksi);
+        echo "Data detail penjualan gagal disimpan <br>" . mysqli_error($koneksi);
     }
 }
 

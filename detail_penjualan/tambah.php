@@ -51,16 +51,9 @@ function insertDetail($koneksi, $id_produk, $jumlah, $subtotal, $id_pembayaran) 
     </div>
 
     <div class="mb-3">
-      <label class="form-label">Pembayaran</label>
-      <select name="id_pembayaran" class="form-control" required>
-        <option value="">-- Pilih Pembayaran --</option>
-        <?php 
-        $pembayaran = mysqli_query($koneksi, "SELECT ID_PEMBAYARAN FROM pembayaran");
-        while ($pb = mysqli_fetch_assoc($pembayaran)) {
-            echo "<option value='{$pb['ID_PEMBAYARAN']}'>ID: {$pb['ID_PEMBAYARAN']}</option>";
-        }
-        ?>
-      </select>
+      <label class="form-label">ID Pembayaran</label>
+      <input type="number" name="id_pembayaran" class="form-control" required>
+
     </div>
 
     <button type="submit" name="tambah" class="btn btn-primary">Simpan</button>

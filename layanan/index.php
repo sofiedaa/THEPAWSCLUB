@@ -60,7 +60,7 @@
     <tbody>
       <?php $i = 1; while($row = mysqli_fetch_assoc($data)): ?>
       <tr>
-        <td class="text-center"><?= $i++ ?></td>
+        <td class="text-center"><?= $row['Id_Layanan'] ?></td>
         <td><?= $row['Nama_Layanan'] ?></td>
         <td class="text-center"><?= $row['Id_Pegawai'] ?></td>
         <td><div class="deskripsi-kecil"><?= $row['Deskripsi'] ?></div></td>

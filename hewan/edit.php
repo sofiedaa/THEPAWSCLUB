@@ -41,6 +41,7 @@ $row = mysqli_fetch_assoc($data);
   <form method="POST" action="function.php">
     <input type="hidden" name="id_hewan" value="<?= $row['ID_HEWAN'] ?>">
 
+
     <div class="mb-3">
       <label class="form-label">Nama Hewan</label>
       <input type="text" name="nama_hewan" class="form-control" value="<?= $row['NAMA_HEWAN'] ?>" required>
@@ -63,12 +64,21 @@ $row = mysqli_fetch_assoc($data);
 
     <div class="mb-3">
       <label class="form-label">ID Pelanggan</label>
-      <input type="text" name="id_pelanggan" class="form-control" value="<?= $row['ID_PELANGGAN'] ?>" required>
-    </div>
+      <select name="id_pelanggan" class="form-control" required>
+  <option value="">-- Pilih Pelanggan --</option>
+  <?php 
+  $query = mysqli_query($koneksi, "SELECT Id_Pelanggan, Nama FROM pelanggan");
+  while ($data = mysqli_fetch_assoc($query)) {
+      echo "<option value='{$data['Id_Pelanggan']}'>{$data['Nama']} (ID: {$data['Id_Pelanggan']})</option>";
+  }
+  ?>
 
+</select>
+    </div>
     <button type="submit" name="edit" class="btn btn-primary">Update</button>
   </form>
 </div>
+
 
 </body>
 </html>

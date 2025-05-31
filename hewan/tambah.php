@@ -27,10 +27,6 @@ function insertHewan($koneksi, $id_hewan, $jenis, $usia, $berat, $id_pelanggan, 
 
   <form method="POST" action="function.php">
     <div class="mb-3">
-      <label class="form-label">ID Hewan</label>
-      <input type="text" name="id_hewan" class="form-control" required>
-    </div>
-    <div class="mb-3">
       <label class="form-label">Nama Hewan</label>
       <input type="text" name="nama_hewan" class="form-control" required>
     </div>

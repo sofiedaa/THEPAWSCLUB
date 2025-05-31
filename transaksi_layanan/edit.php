@@ -32,9 +32,20 @@ $row = mysqli_fetch_assoc($data);
       <input type="text" name="id_pembayaran" class="form-control" value="<?= $row['ID_PEMBAYARAN'] ?>" required>
     </div>
     <div class="mb-3">
-      <label class="form-label">ID Layanan</label>
-      <input type="text" name="id_layanan" class="form-control" value="<?= $row['ID_LAYANAN'] ?>" required>
-    </div>
+  <label class="form-label">ID Layanan</label>
+  <select name="id_layanan" class="form-control" required>
+    <option value="">-- Pilih Layanan --</option>
+    <?php 
+      include '../koneksi.php';
+      $layanan = mysqli_query($koneksi, "SELECT ID_LAYANAN, NAMA_LAYANAN FROM layanan");
+      while ($l = mysqli_fetch_assoc($layanan)) {
+          echo "<option value='{$l['ID_LAYANAN']}'>
+                  {$l['ID_LAYANAN']} - {$l['NAMA_LAYANAN']}
+                </option>";
+      }
+    ?>
+  </select>
+</div>
     <div class="mb-3">
       <label class="form-label">Jumlah</label>
       <input type="number" name="jumlah" class="form-control" value="<?= $row['JUMLAH'] ?>" required>
