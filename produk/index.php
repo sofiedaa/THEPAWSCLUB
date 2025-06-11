@@ -42,7 +42,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM produk");
     <tbody>
       <?php $i = 1; while($row = mysqli_fetch_assoc($data)): ?>
       <tr>
-        <td><?= $i++ ?></td>
+        <td><?= $row['ID_PRODUK'] ?></td>
         <td><?= $row['KODE_PRODUK'] ?></td>
         <td><?= $row['NAMA_PRODUK'] ?></td>
         <td>Rp <?= number_format($row['HARGA'], 0, ',', '.') ?></td>

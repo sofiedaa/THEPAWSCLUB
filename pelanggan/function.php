@@ -9,13 +9,14 @@ function insertPelanggan($koneksi, $nama, $no_telp, $alamat, $email) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['tambah'])) {
-    $nama     = $_POST['Nama'];
-    $no_telp  = $_POST['No_Telp']; // disesuaiin sama nama field di form
-    $alamat   = $_POST['Alamat'];
-    $email    = $_POST['Email'];
+    $nama     = $_POST['nama'];
+    $no_telp  = $_POST['telp'];
+    $alamat   = $_POST['alamat'];
+    $email    = $_POST['email'];
+
 
     if (insertPelanggan($koneksi, $nama, $no_telp, $alamat, $email)) {
-        header("Location: index.php"); // balik ke halaman index pelanggan
+        header("Location: index.php"); 
         exit;
     } else {
         echo "Data gagal disimpan";

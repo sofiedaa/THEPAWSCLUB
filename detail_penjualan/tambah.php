@@ -42,7 +42,7 @@ function insertDetail($koneksi, $id_produk, $jumlah, $subtotal, $id_pembayaran) 
 
     <div class="mb-3">
       <label class="form-label">Jumlah</label>
-      <input type="number" name="jumlah" class="form-control" required>
+      <input type="number" name="JUMLAH" class="form-control" required>
     </div>
 
     <div class="mb-3">
@@ -52,7 +52,7 @@ function insertDetail($koneksi, $id_produk, $jumlah, $subtotal, $id_pembayaran) 
 
     <div class="mb-3">
       <label class="form-label">ID Pembayaran</label>
-      <input type="number" name="id_pembayaran" class="form-control" required>
+      <input type="number" name="ID_PEMBAYARAN" class="form-control" required>
 
     </div>
 
