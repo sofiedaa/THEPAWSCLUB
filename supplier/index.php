@@ -40,9 +40,9 @@
     <tbody>
       <?php $i = 1; while($row = mysqli_fetch_assoc($data)): ?>
       <tr>
-        <td><?= $i++ ?></td>
+        <td><?= $row['ID_SUPPLIER'] ?></td>
         <td><?= $row['ID_PRODUK'] ?></td>
-        <td><?= htmlspecialchars($row['NAMA_SUPPLIER']) ?></td>
+        <td><?= $row['NAMA_SUPPLIER'] ?></td>
         <td><?= $row['NO_TELP'] ?></td>
         <td><?= $row['ALAMAT'] ?></td>
         <td><?= $row['EMAIL'] ?></td>

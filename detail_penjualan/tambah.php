@@ -29,7 +29,7 @@ function insertDetail($koneksi, $id_produk, $jumlah, $subtotal, $id_pembayaran) 
   <form method="POST" action="function.php">
     <div class="mb-3">
       <label class="form-label">Produk</label>
-      <select name="id_produk" class="form-control" required>
+      <select name="ID_PRODUK" class="form-control" required>
         <option value="">-- Pilih Produk --</option>
         <?php 
         $produk = mysqli_query($koneksi, "SELECT ID_PRODUK, NAMA_PRODUK FROM produk");
@@ -52,8 +52,18 @@ function insertDetail($koneksi, $id_produk, $jumlah, $subtotal, $id_pembayaran) 
 
     <div class="mb-3">
       <label class="form-label">ID Pembayaran</label>
-      <input type="number" name="ID_PEMBAYARAN" class="form-control" required>
-
+      <select name="id_layanan" class="form-control" required>
+    <option value="">-- Pilih ID Pembayaran --</option>
+    <?php 
+      include '../koneksi.php';
+      $pembayaran = mysqli_query($koneksi, "SELECT ID_PEMBAYARAN FROM pembayaran");
+      while ($l = mysqli_fetch_assoc($pembayaran)) {
+          echo "<option value='{$l['ID_PEMBAYARAN']}'>
+                  {$l['ID_PEMBAYARAN']} 
+                </option>";
+      }
+    ?>
+  </select>
     </div>
 
     <button type="submit" name="tambah" class="btn btn-primary">Simpan</button>

@@ -29,7 +29,18 @@ $row = mysqli_fetch_assoc($data);
     
     <div class="mb-3">
       <label class="form-label">ID Pembayaran</label>
-      <input type="text" name="id_pembayaran" class="form-control" value="<?= $row['ID_PEMBAYARAN'] ?>" required>
+       <select name="id_layanan" class="form-control" required>
+    <option value="">-- Pilih ID Pembayaran --</option>
+    <?php 
+      include '../koneksi.php';
+      $pembayaran = mysqli_query($koneksi, "SELECT ID_PEMBAYARAN FROM pembayaran");
+      while ($l = mysqli_fetch_assoc($pembayaran)) {
+          echo "<option value='{$l['ID_PEMBAYARAN']}'>
+                  {$l['ID_PEMBAYARAN']} 
+                </option>";
+      }
+    ?>
+  </select>
     </div>
     <div class="mb-3">
   <label class="form-label">ID Layanan</label>

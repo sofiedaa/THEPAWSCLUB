@@ -39,16 +39,16 @@ $row = mysqli_fetch_assoc($data);
   </div>
 
   <form method="POST" action="function.php">
-    <input type="hidden" name="id_detail" value="<?= $row['ID_DETAIL'] ?>">
+    <input type="hidden" name="ID_DETAIL" value="<?= $row['ID_DETAIL'] ?>">
 
     <div class="mb-3">
       <label class="form-label">ID Produk</label>
-      <input type="number" name="id_produk" class="form-control" value="<?= $row['ID_PRODUK'] ?>" required>
+      <input type="number" name="ID_PRODUK" class="form-control" value="<?= $row['ID_PRODUK'] ?>" required>
     </div>
 
     <div class="mb-3">
       <label class="form-label">Jumlah</label>
-      <input type="number" name="jumlah" class="form-control" value="<?= $row['JUMLAH'] ?>" required>
+      <input type="number" name="JUMLAH" class="form-control" value="<?= $row['JUMLAH'] ?>" required>
     </div>
 
     <div class="mb-3">
@@ -58,7 +58,18 @@ $row = mysqli_fetch_assoc($data);
 
     <div class="mb-3">
       <label class="form-label">ID Pembayaran</label>
-      <input type="number" name="id_pembayaran" class="form-control" value="<?= $row['ID_PEMBAYARAN'] ?>" required>
+       <select name="id_layanan" class="form-control" required>
+    <option value="">-- Pilih ID Pembayaran --</option>
+    <?php 
+      include '../koneksi.php';
+      $pembayaran = mysqli_query($koneksi, "SELECT ID_PEMBAYARAN FROM pembayaran");
+      while ($l = mysqli_fetch_assoc($pembayaran)) {
+          echo "<option value='{$l['ID_PEMBAYARAN']}'>
+                  {$l['ID_PEMBAYARAN']} 
+                </option>";
+      }
+    ?>
+  </select>
     </div>
 
     <button type="submit" name="edit" class="btn btn-primary">Update</button>

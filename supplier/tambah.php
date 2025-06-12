@@ -28,12 +28,16 @@ function insertSupplier($koneksi, $id_supplier, $id_produk, $nama_supplier, $no_
 
   <form method="POST" action="function.php">
     <div class="mb-3">
-      <label class="form-label">ID Supplier</label>
-      <input type="number" name="id_supplier" class="form-control" required>
-    </div>
-    <div class="mb-3">
       <label class="form-label">ID Produk</label>
-      <input type="number" name="id_produk" class="form-control" required>
+      <select name="ID_PRODUK" class="form-control" required>
+        <option value="">-- Pilih Produk --</option>
+        <?php 
+        $produk = mysqli_query($koneksi, "SELECT ID_PRODUK, NAMA_PRODUK FROM produk");
+        while ($p = mysqli_fetch_assoc($produk)) {
+            echo "<option value='{$p['ID_PRODUK']}'>{$p['NAMA_PRODUK']} (ID: {$p['ID_PRODUK']})</option>";
+        }
+        ?>
+      </select>
     </div>
     <div class="mb-3">
       <label class="form-label">Nama Supplier</label>

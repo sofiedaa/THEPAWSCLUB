@@ -39,11 +39,18 @@ $row = mysqli_fetch_assoc($data);
   </div>
 
   <form method="POST" action="function.php">
-    <input type="hidden" name="id_supplier" value="<?= $row['ID_SUPPLIER'] ?>">
     
     <div class="mb-3">
       <label class="form-label">ID Produk</label>
-      <input type="number" name="id_produk" class="form-control" value="<?= $row['ID_PRODUK'] ?>" required>
+      <select name="ID_PRODUK" class="form-control" required>
+        <option value="">-- Pilih Produk --</option>
+        <?php 
+        $produk = mysqli_query($koneksi, "SELECT ID_PRODUK, NAMA_PRODUK FROM produk");
+        while ($p = mysqli_fetch_assoc($produk)) {
+            echo "<option value='{$p['ID_PRODUK']}'>{$p['NAMA_PRODUK']} (ID: {$p['ID_PRODUK']})</option>";
+        }
+        ?>
+      </select>
     </div>
     <div class="mb-3">
       <label class="form-label">Nama Supplier</label>
